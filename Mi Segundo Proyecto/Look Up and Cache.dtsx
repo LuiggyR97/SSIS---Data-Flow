@@ -1,0 +1,2654 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/26/2024 9:11:30 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-HTNVJ684"
+  DTS:CreatorName="LAPTOP-HTNVJ684\Luiggy"
+  DTS:DTSID="{98EED958-094A-4722-B007-98C328C82F38}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5397.1"
+  DTS:LocaleID="3082"
+  DTS:ObjectName="Look Up and Cache"
+  DTS:PackageType="5"
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{860E8AE0-7E20-41DC-A0A8-D639B37306CC}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Administrador de conexiones con Excel]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{6CFEE439-F56E-4FBA-A051-B53CE8961BA3}"
+      DTS:ObjectName="Administrador de conexiones con Excel">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Bases de datos SQL Sever\Look Up an Cache\Country.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Conexion Archivo Cache]"
+      DTS:CreationName="CACHE"
+      DTS:DTSID="{CB86A512-2AB0-4123-9169-3F1298FC4739}"
+      DTS:ObjectName="Conexion Archivo Cache">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:UseFile="True"
+          DTS:ConnectionString="C:\Bases de datos SQL Sever\Look Up an Cache\Country.caw">
+          <DTS:CacheColumns>
+            <DTS:CacheColumn
+              DTS:DataType="130"
+              DTS:Length="255"
+              DTS:IndexPosition="1"
+              DTS:ObjectName="CountryRegionCode"
+              DTS:DTSID="{50B3516B-6A5D-4E71-AA06-67085DA62951}"
+              DTS:CreationName="" />
+            <DTS:CacheColumn
+              DTS:DataType="130"
+              DTS:Length="255"
+              DTS:ObjectName="EnglishCountryRegionName"
+              DTS:DTSID="{D8962FCC-68AE-4D20-9197-11A22F3E56A2}"
+              DTS:CreationName="" />
+          </DTS:CacheColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ConexionArchivoCache]"
+      DTS:CreationName="CACHE"
+      DTS:DTSID="{491512C6-5A43-40BC-BDA7-AE585F69E1B5}"
+      DTS:ObjectName="ConexionArchivoCache">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:UseFile="True"
+          DTS:ConnectionString="C:\Bases de datos SQL Sever\Look Up an Cache\Country.caw">
+          <DTS:CacheColumns>
+            <DTS:CacheColumn
+              DTS:DataType="130"
+              DTS:Length="255"
+              DTS:IndexPosition="1"
+              DTS:ObjectName="CountryRegionCode"
+              DTS:DTSID="{CB0CE43C-4946-43FB-8123-8A16B2AE1BCF}"
+              DTS:CreationName="" />
+            <DTS:CacheColumn
+              DTS:DataType="130"
+              DTS:Length="255"
+              DTS:ObjectName="EnglishCountryRegionName"
+              DTS:DTSID="{864C3DE7-42BE-4759-9E25-12CB38529650}"
+              DTS:CreationName="" />
+          </DTS:CacheColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-HTNVJ684\SQLEXPRESS.AdventureWorksDW2016]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{FFA1DB49-16E5-4BDA-BC79-0385E0663DD5}"
+      DTS:ObjectName="LAPTOP-HTNVJ684\SQLEXPRESS.AdventureWorksDW2016">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-HTNVJ684\SQLEXPRESS;Initial Catalog=AdventureWorksDW2016;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Look Up and Cache-{FFA1DB49-16E5-4BDA-BC79-0385E0663DD5}LAPTOP-HTNVJ684\SQLEXPRESS.AdventureWorksDW2016;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-HTNVJ684\SQLEXPRESS.STREAMING]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{6F103A3C-5D3B-4DEC-B320-5751736BD1EC}"
+      DTS:ObjectName="LAPTOP-HTNVJ684\SQLEXPRESS.STREAMING">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-HTNVJ684\SQLEXPRESS;Initial Catalog=STREAMING;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Look Up and Cache-{6F103A3C-5D3B-4DEC-B320-5751736BD1EC}LAPTOP-HTNVJ684\SQLEXPRESS.STREAMING;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Reporte Coincidente de Cache]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{866D9D87-7548-4924-ADC6-09254D140D66}"
+      DTS:ObjectName="Reporte Coincidente de Cache">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3082"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Bases de datos SQL Sever\Look Up an Cache\Reporte Coincidente de Cache.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CountryRegionCode"
+              DTS:DTSID="{848FE892-1158-45D4-84CF-7528B62ACF6E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EnglishCountryRegionName"
+              DTS:DTSID="{CAE2935A-57D4-49AB-9BA6-92CF4358AF78}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StateProvinceName"
+              DTS:DTSID="{C6AA3288-9279-48DD-B83F-906DCB4147FC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="City"
+              DTS:DTSID="{CA16F33E-639F-4737-8A4C-631A091847FD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="IpAddressLocator"
+              DTS:DTSID="{5704696C-B37D-4120-975D-2B60A724D417}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Reporte Coincidente Ole DB]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{4A2105CD-2EA1-4A9D-AA24-99BD2595BE0F}"
+      DTS:ObjectName="Reporte Coincidente Ole DB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3082"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Bases de datos SQL Sever\Look Up an Cache\Reporte Coincidente Ole DB.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CountryRegionCode"
+              DTS:DTSID="{A77505DF-0A90-4960-B207-285F6D6A197D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EnglishCountryRegionName"
+              DTS:DTSID="{AEF0D1F5-936B-4457-BCBC-B35B96752113}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StateProvinceName"
+              DTS:DTSID="{3527A87C-C881-4371-AB35-19E3E3B53C6B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="City"
+              DTS:DTSID="{A9FD1ED4-C416-42D3-90D1-91D2DA705777}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="IpAddressLocator"
+              DTS:DTSID="{C368D24F-7A63-4F1D-B10A-664E93ED4CD0}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Reporte no Coincidente de Cache]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{0A87AF2A-41BE-4877-BAFF-C3216CB90DBF}"
+      DTS:ObjectName="Reporte no Coincidente de Cache">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3082"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Bases de datos SQL Sever\Look Up an Cache\Reporte no Coincidente de Cache.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CountryRegionCode"
+              DTS:DTSID="{DC510271-54AE-4D6A-BD0D-30697FDEA51B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EnglishCountryRegionName"
+              DTS:DTSID="{6652B000-4394-4877-BE5B-6EE7767B078A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StateProvinceName"
+              DTS:DTSID="{F94D825A-B747-46D2-B35F-56B6717202AA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="City"
+              DTS:DTSID="{601C1428-0689-4239-846E-34F99B04AEDB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="IpAddressLocator"
+              DTS:DTSID="{474BE4F7-0B39-43E2-93A0-0C3CAE94C17C}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Reporte no Coincidente Ole DB]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{2FF0A8CB-B2F4-44D8-BFF7-EA1F422D62AF}"
+      DTS:ObjectName="Reporte no Coincidente Ole DB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3082"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Bases de datos SQL Sever\Look Up an Cache\Reporte no Coincidente Ole DB.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CountryRegionCode"
+              DTS:DTSID="{46E6E429-D689-4056-BD5F-281A28C1446C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EnglishCountryRegionName"
+              DTS:DTSID="{1BF430B4-1991-4902-BD67-ABD15D23D81D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StateProvinceName"
+              DTS:DTSID="{7F26E34E-4E56-4C76-86A8-D1FDBC7F234A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="City"
+              DTS:DTSID="{DD831FB1-0462-4DAA-B911-298D540DD938}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="IpAddressLocator"
+              DTS:DTSID="{2FEA23F6-8DF0-44D2-BDEF-CAF47EEC4A5A}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Cache Look UP"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{38158F12-345B-4279-B1D6-AAB74180F222}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Cache Look UP"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Cache Look UP\Búsqueda"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Búsqueda;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;6"
+              description="Combina columnas adicionales con el flujo de datos mediante la búsqueda de valores en una tabla. Por ejemplo, se combina la columna 'id. de empleado' con la tabla de empleados para obtener la 'fecha de contratación' y 'el nombre de empleado'. Se recomienda esta transformación cuando hay suficiente espacio en memoria para la tabla de búsqueda."
+              name="Búsqueda"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL que genera la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[AdventureWorksDWBuildVersion]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica una instrucción SQL que usa parámetros para generar la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[AdventureWorksDWBuildVersion]) [refTable]
+where [refTable].[CountryRegionCode] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de conexión utilizado para tener acceso al conjunto de datos de referencia."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de caché de la tabla de búsqueda."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cómo la transformación de búsquedas trata las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el porcentaje de la caché asignado a las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indica si se debe hacer referencia a metadatos en formato XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CountryRegionCode" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EnglishCountryRegionName" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Especifica la lista de identificadores de linaje que están asignados a los parámetros que usa la instrucción SQL de la propiedad SQLCommand. Las entradas de la lista están separadas por puntos y comas."
+                  name="ParameterMap">#{Package\Cache Look UP\DimGeography.Outputs[Salida de origen de OLE DB].Columns[CountryRegionCode]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determina si las claves duplicadas de los datos de referencia se deben tratar como errores cuando se usa el modo de caché."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Cache Look UP\Búsqueda.Connections[CacheConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Conexion Archivo Cache]"
+                  connectionManagerRefId="Package.ConnectionManagers[Conexion Archivo Cache]"
+                  description="Administrador de conexiones utilizado para obtener acceso a los datos de búsqueda."
+                  name="CacheConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Cache Look UP\Búsqueda.Inputs[Entrada de búsqueda]"
+                  name="Entrada de búsqueda">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Cache Look UP\Búsqueda.Inputs[Entrada de búsqueda].Columns[CountryRegionCode]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="CountryRegionCode"
+                      lineageId="Package\Cache Look UP\DimGeography.Outputs[Salida de origen de OLE DB].Columns[CountryRegionCode]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                          name="JoinToReferenceColumn">CountryRegionCode</property>
+                        <property
+                          dataType="System.Null"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Cache Look UP\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda]"
+                  errorOrTruncationOperation="Búsqueda"
+                  exclusionGroup="1"
+                  name="Salida de entradas coincidentes de búsqueda"
+                  synchronousInputId="Package\Cache Look UP\Búsqueda.Inputs[Entrada de búsqueda]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Cache Look UP\Búsqueda.Outputs[Salida de entradas no coincidentes de búsqueda]"
+                  description="Salida de búsqueda que trata las filas sin entradas coincidentes en el conjunto de datos de referencia. Utilice esta salida cuando la propiedad NoMatchBehavior esté establecida en 'Enviar las filas sin entradas coincidentes a la salida de entradas no coincidentes'."
+                  exclusionGroup="1"
+                  name="Salida de entradas no coincidentes de búsqueda"
+                  synchronousInputId="Package\Cache Look UP\Búsqueda.Inputs[Entrada de búsqueda]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Cache Look UP\Búsqueda.Outputs[Salida de error de búsqueda]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de búsqueda"
+                  synchronousInputId="Package\Cache Look UP\Búsqueda.Inputs[Entrada de búsqueda]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cache Look UP\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Cache Look UP\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Cache Look UP\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Cache Look UP\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Cache Look UP\DimGeography"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="DimGeography"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT CountryRegionCode, EnglishCountryRegionName, 
+		StateProvinceName, City, IpAddressLocator
+ FROM DimGeography</property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Cache Look UP\DimGeography.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-HTNVJ684\SQLEXPRESS.AdventureWorksDW2016]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-HTNVJ684\SQLEXPRESS.AdventureWorksDW2016]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Cache Look UP\DimGeography.Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cache Look UP\DimGeography.Outputs[Salida de origen de OLE DB].Columns[CountryRegionCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cache Look UP\DimGeography.Outputs[Salida de origen de OLE DB].ExternalColumns[CountryRegionCode]"
+                      length="3"
+                      lineageId="Package\Cache Look UP\DimGeography.Outputs[Salida de origen de OLE DB].Columns[CountryRegionCode]"
+                      name="CountryRegionCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cache Look UP\DimGeography.Outputs[Salida de origen de OLE DB].Columns[EnglishCountryRegionName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cache Look UP\DimGeography.Outputs[Salida de origen de OLE DB].ExternalColumns[EnglishCountryRegionName]"
+                      length="50"
+                      lineageId="Package\Cache Look UP\DimGeography.Outputs[Salida de origen de OLE DB].Columns[EnglishCountryRegionName]"
+                      name="EnglishCountryRegionName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cache Look UP\DimGeography.Outputs[Salida de origen de OLE DB].Columns[StateProvinceName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cache Look UP\DimGeography.Outputs[Salida de origen de OLE DB].ExternalColumns[StateProvinceName]"
+                      length="50"
+                      lineageId="Package\Cache Look UP\DimGeography.Outputs[Salida de origen de OLE DB].Columns[StateProvinceName]"
+                      name="StateProvinceName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cache Look UP\DimGeography.Outputs[Salida de origen de OLE DB].Columns[City]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cache Look UP\DimGeography.Outputs[Salida de origen de OLE DB].ExternalColumns[City]"
+                      length="30"
+                      lineageId="Package\Cache Look UP\DimGeography.Outputs[Salida de origen de OLE DB].Columns[City]"
+                      name="City"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cache Look UP\DimGeography.Outputs[Salida de origen de OLE DB].Columns[IpAddressLocator]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cache Look UP\DimGeography.Outputs[Salida de origen de OLE DB].ExternalColumns[IpAddressLocator]"
+                      length="15"
+                      lineageId="Package\Cache Look UP\DimGeography.Outputs[Salida de origen de OLE DB].Columns[IpAddressLocator]"
+                      name="IpAddressLocator"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Cache Look UP\DimGeography.Outputs[Salida de origen de OLE DB].ExternalColumns[CountryRegionCode]"
+                      dataType="wstr"
+                      length="3"
+                      name="CountryRegionCode" />
+                    <externalMetadataColumn
+                      refId="Package\Cache Look UP\DimGeography.Outputs[Salida de origen de OLE DB].ExternalColumns[EnglishCountryRegionName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EnglishCountryRegionName" />
+                    <externalMetadataColumn
+                      refId="Package\Cache Look UP\DimGeography.Outputs[Salida de origen de OLE DB].ExternalColumns[StateProvinceName]"
+                      dataType="wstr"
+                      length="50"
+                      name="StateProvinceName" />
+                    <externalMetadataColumn
+                      refId="Package\Cache Look UP\DimGeography.Outputs[Salida de origen de OLE DB].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="30"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\Cache Look UP\DimGeography.Outputs[Salida de origen de OLE DB].ExternalColumns[IpAddressLocator]"
+                      dataType="wstr"
+                      length="15"
+                      name="IpAddressLocator" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Cache Look UP\DimGeography.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cache Look UP\DimGeography.Outputs[Salida de error de origen de OLE DB].Columns[CountryRegionCode]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\Cache Look UP\DimGeography.Outputs[Salida de error de origen de OLE DB].Columns[CountryRegionCode]"
+                      name="CountryRegionCode" />
+                    <outputColumn
+                      refId="Package\Cache Look UP\DimGeography.Outputs[Salida de error de origen de OLE DB].Columns[EnglishCountryRegionName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Cache Look UP\DimGeography.Outputs[Salida de error de origen de OLE DB].Columns[EnglishCountryRegionName]"
+                      name="EnglishCountryRegionName" />
+                    <outputColumn
+                      refId="Package\Cache Look UP\DimGeography.Outputs[Salida de error de origen de OLE DB].Columns[StateProvinceName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Cache Look UP\DimGeography.Outputs[Salida de error de origen de OLE DB].Columns[StateProvinceName]"
+                      name="StateProvinceName" />
+                    <outputColumn
+                      refId="Package\Cache Look UP\DimGeography.Outputs[Salida de error de origen de OLE DB].Columns[City]"
+                      dataType="wstr"
+                      length="30"
+                      lineageId="Package\Cache Look UP\DimGeography.Outputs[Salida de error de origen de OLE DB].Columns[City]"
+                      name="City" />
+                    <outputColumn
+                      refId="Package\Cache Look UP\DimGeography.Outputs[Salida de error de origen de OLE DB].Columns[IpAddressLocator]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Cache Look UP\DimGeography.Outputs[Salida de error de origen de OLE DB].Columns[IpAddressLocator]"
+                      name="IpAddressLocator" />
+                    <outputColumn
+                      refId="Package\Cache Look UP\DimGeography.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Cache Look UP\DimGeography.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Cache Look UP\DimGeography.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Cache Look UP\DimGeography.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Cache Look UP\Reporte Coincidente de Cache"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Destino de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Destino de archivo plano"
+              localeId="3082"
+              name="Reporte Coincidente de Cache"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si los datos sobrescriben el archivo de destino o se anexan al mismo."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica el texto para escribir en el archivo de destino antes de escribir ningún dato."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Cuando el calificador de texto está habilitado, especifica si este contendrá secuencias de escape o no en los datos escritos en el archivo de destino."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Cache Look UP\Reporte Coincidente de Cache.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Reporte Coincidente de Cache]"
+                  connectionManagerRefId="Package.ConnectionManagers[Reporte Coincidente de Cache]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Cache Look UP\Reporte Coincidente de Cache.Inputs[Entrada de destino de archivo plano]"
+                  hasSideEffects="true"
+                  name="Entrada de destino de archivo plano">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Cache Look UP\Reporte Coincidente de Cache.Inputs[Entrada de destino de archivo plano].Columns[CountryRegionCode]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="CountryRegionCode"
+                      externalMetadataColumnId="Package\Cache Look UP\Reporte Coincidente de Cache.Inputs[Entrada de destino de archivo plano].ExternalColumns[CountryRegionCode]"
+                      lineageId="Package\Cache Look UP\DimGeography.Outputs[Salida de origen de OLE DB].Columns[CountryRegionCode]" />
+                    <inputColumn
+                      refId="Package\Cache Look UP\Reporte Coincidente de Cache.Inputs[Entrada de destino de archivo plano].Columns[EnglishCountryRegionName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishCountryRegionName"
+                      externalMetadataColumnId="Package\Cache Look UP\Reporte Coincidente de Cache.Inputs[Entrada de destino de archivo plano].ExternalColumns[EnglishCountryRegionName]"
+                      lineageId="Package\Cache Look UP\DimGeography.Outputs[Salida de origen de OLE DB].Columns[EnglishCountryRegionName]" />
+                    <inputColumn
+                      refId="Package\Cache Look UP\Reporte Coincidente de Cache.Inputs[Entrada de destino de archivo plano].Columns[StateProvinceName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="StateProvinceName"
+                      externalMetadataColumnId="Package\Cache Look UP\Reporte Coincidente de Cache.Inputs[Entrada de destino de archivo plano].ExternalColumns[StateProvinceName]"
+                      lineageId="Package\Cache Look UP\DimGeography.Outputs[Salida de origen de OLE DB].Columns[StateProvinceName]" />
+                    <inputColumn
+                      refId="Package\Cache Look UP\Reporte Coincidente de Cache.Inputs[Entrada de destino de archivo plano].Columns[City]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="City"
+                      externalMetadataColumnId="Package\Cache Look UP\Reporte Coincidente de Cache.Inputs[Entrada de destino de archivo plano].ExternalColumns[City]"
+                      lineageId="Package\Cache Look UP\DimGeography.Outputs[Salida de origen de OLE DB].Columns[City]" />
+                    <inputColumn
+                      refId="Package\Cache Look UP\Reporte Coincidente de Cache.Inputs[Entrada de destino de archivo plano].Columns[IpAddressLocator]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="IpAddressLocator"
+                      externalMetadataColumnId="Package\Cache Look UP\Reporte Coincidente de Cache.Inputs[Entrada de destino de archivo plano].ExternalColumns[IpAddressLocator]"
+                      lineageId="Package\Cache Look UP\DimGeography.Outputs[Salida de origen de OLE DB].Columns[IpAddressLocator]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Cache Look UP\Reporte Coincidente de Cache.Inputs[Entrada de destino de archivo plano].ExternalColumns[CountryRegionCode]"
+                      dataType="wstr"
+                      length="3"
+                      name="CountryRegionCode" />
+                    <externalMetadataColumn
+                      refId="Package\Cache Look UP\Reporte Coincidente de Cache.Inputs[Entrada de destino de archivo plano].ExternalColumns[EnglishCountryRegionName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EnglishCountryRegionName" />
+                    <externalMetadataColumn
+                      refId="Package\Cache Look UP\Reporte Coincidente de Cache.Inputs[Entrada de destino de archivo plano].ExternalColumns[StateProvinceName]"
+                      dataType="wstr"
+                      length="50"
+                      name="StateProvinceName" />
+                    <externalMetadataColumn
+                      refId="Package\Cache Look UP\Reporte Coincidente de Cache.Inputs[Entrada de destino de archivo plano].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="30"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\Cache Look UP\Reporte Coincidente de Cache.Inputs[Entrada de destino de archivo plano].ExternalColumns[IpAddressLocator]"
+                      dataType="wstr"
+                      length="15"
+                      name="IpAddressLocator" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Cache Look UP\Reporte no Coincidente de Cache"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Destino de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Destino de archivo plano"
+              localeId="3082"
+              name="Reporte no Coincidente de Cache"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si los datos sobrescriben el archivo de destino o se anexan al mismo."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica el texto para escribir en el archivo de destino antes de escribir ningún dato."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Cuando el calificador de texto está habilitado, especifica si este contendrá secuencias de escape o no en los datos escritos en el archivo de destino."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Cache Look UP\Reporte no Coincidente de Cache.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Reporte no Coincidente de Cache]"
+                  connectionManagerRefId="Package.ConnectionManagers[Reporte no Coincidente de Cache]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Cache Look UP\Reporte no Coincidente de Cache.Inputs[Entrada de destino de archivo plano]"
+                  hasSideEffects="true"
+                  name="Entrada de destino de archivo plano">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Cache Look UP\Reporte no Coincidente de Cache.Inputs[Entrada de destino de archivo plano].Columns[CountryRegionCode]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="CountryRegionCode"
+                      externalMetadataColumnId="Package\Cache Look UP\Reporte no Coincidente de Cache.Inputs[Entrada de destino de archivo plano].ExternalColumns[CountryRegionCode]"
+                      lineageId="Package\Cache Look UP\DimGeography.Outputs[Salida de origen de OLE DB].Columns[CountryRegionCode]" />
+                    <inputColumn
+                      refId="Package\Cache Look UP\Reporte no Coincidente de Cache.Inputs[Entrada de destino de archivo plano].Columns[EnglishCountryRegionName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishCountryRegionName"
+                      externalMetadataColumnId="Package\Cache Look UP\Reporte no Coincidente de Cache.Inputs[Entrada de destino de archivo plano].ExternalColumns[EnglishCountryRegionName]"
+                      lineageId="Package\Cache Look UP\DimGeography.Outputs[Salida de origen de OLE DB].Columns[EnglishCountryRegionName]" />
+                    <inputColumn
+                      refId="Package\Cache Look UP\Reporte no Coincidente de Cache.Inputs[Entrada de destino de archivo plano].Columns[StateProvinceName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="StateProvinceName"
+                      externalMetadataColumnId="Package\Cache Look UP\Reporte no Coincidente de Cache.Inputs[Entrada de destino de archivo plano].ExternalColumns[StateProvinceName]"
+                      lineageId="Package\Cache Look UP\DimGeography.Outputs[Salida de origen de OLE DB].Columns[StateProvinceName]" />
+                    <inputColumn
+                      refId="Package\Cache Look UP\Reporte no Coincidente de Cache.Inputs[Entrada de destino de archivo plano].Columns[City]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="City"
+                      externalMetadataColumnId="Package\Cache Look UP\Reporte no Coincidente de Cache.Inputs[Entrada de destino de archivo plano].ExternalColumns[City]"
+                      lineageId="Package\Cache Look UP\DimGeography.Outputs[Salida de origen de OLE DB].Columns[City]" />
+                    <inputColumn
+                      refId="Package\Cache Look UP\Reporte no Coincidente de Cache.Inputs[Entrada de destino de archivo plano].Columns[IpAddressLocator]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="IpAddressLocator"
+                      externalMetadataColumnId="Package\Cache Look UP\Reporte no Coincidente de Cache.Inputs[Entrada de destino de archivo plano].ExternalColumns[IpAddressLocator]"
+                      lineageId="Package\Cache Look UP\DimGeography.Outputs[Salida de origen de OLE DB].Columns[IpAddressLocator]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Cache Look UP\Reporte no Coincidente de Cache.Inputs[Entrada de destino de archivo plano].ExternalColumns[CountryRegionCode]"
+                      dataType="wstr"
+                      length="3"
+                      name="CountryRegionCode" />
+                    <externalMetadataColumn
+                      refId="Package\Cache Look UP\Reporte no Coincidente de Cache.Inputs[Entrada de destino de archivo plano].ExternalColumns[EnglishCountryRegionName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EnglishCountryRegionName" />
+                    <externalMetadataColumn
+                      refId="Package\Cache Look UP\Reporte no Coincidente de Cache.Inputs[Entrada de destino de archivo plano].ExternalColumns[StateProvinceName]"
+                      dataType="wstr"
+                      length="50"
+                      name="StateProvinceName" />
+                    <externalMetadataColumn
+                      refId="Package\Cache Look UP\Reporte no Coincidente de Cache.Inputs[Entrada de destino de archivo plano].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="30"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\Cache Look UP\Reporte no Coincidente de Cache.Inputs[Entrada de destino de archivo plano].ExternalColumns[IpAddressLocator]"
+                      dataType="wstr"
+                      length="15"
+                      name="IpAddressLocator" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Cache Look UP.Paths[Salida de entradas coincidentes de búsqueda]"
+              endId="Package\Cache Look UP\Reporte Coincidente de Cache.Inputs[Entrada de destino de archivo plano]"
+              name="Salida de entradas coincidentes de búsqueda"
+              startId="Package\Cache Look UP\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda]" />
+            <path
+              refId="Package\Cache Look UP.Paths[Salida de entradas no coincidentes de búsqueda]"
+              endId="Package\Cache Look UP\Reporte no Coincidente de Cache.Inputs[Entrada de destino de archivo plano]"
+              name="Salida de entradas no coincidentes de búsqueda"
+              startId="Package\Cache Look UP\Búsqueda.Outputs[Salida de entradas no coincidentes de búsqueda]" />
+            <path
+              refId="Package\Cache Look UP.Paths[Salida de origen de OLE DB]"
+              endId="Package\Cache Look UP\Búsqueda.Inputs[Entrada de búsqueda]"
+              name="Salida de origen de OLE DB"
+              startId="Package\Cache Look UP\DimGeography.Outputs[Salida de origen de OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Ole DB Look Up"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{8C85CF11-A172-417C-B9BE-92CCE607FA12}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Ole DB Look Up"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Ole DB Look Up\Búsqueda"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Búsqueda;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;6"
+              description="Combina columnas adicionales con el flujo de datos mediante la búsqueda de valores en una tabla. Por ejemplo, se combina la columna 'id. de empleado' con la tabla de empleados para obtener la 'fecha de contratación' y 'el nombre de empleado'. Se recomienda esta transformación cuando hay suficiente espacio en memoria para la tabla de búsqueda."
+              name="Búsqueda"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL que genera la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Busqueda]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica una instrucción SQL que usa parámetros para generar la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Busqueda]) [refTable]
+where [refTable].[CodigoRegion] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de conexión utilizado para tener acceso al conjunto de datos de referencia."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de caché de la tabla de búsqueda."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cómo la transformación de búsquedas trata las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el porcentaje de la caché asignado a las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indica si se debe hacer referencia a metadatos en formato XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CodigoRegion" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NombreRegion" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Especifica la lista de identificadores de linaje que están asignados a los parámetros que usa la instrucción SQL de la propiedad SQLCommand. Las entradas de la lista están separadas por puntos y comas."
+                  name="ParameterMap">#{Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[CountryRegionCode]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determina si las claves duplicadas de los datos de referencia se deben tratar como errores cuando se usa el modo de caché."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Ole DB Look Up\Búsqueda.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-HTNVJ684\SQLEXPRESS.STREAMING]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-HTNVJ684\SQLEXPRESS.STREAMING]"
+                  description="Administrador de conexiones utilizado para obtener acceso a los datos de búsqueda."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Ole DB Look Up\Búsqueda.Inputs[Entrada de búsqueda]"
+                  name="Entrada de búsqueda">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Ole DB Look Up\Búsqueda.Inputs[Entrada de búsqueda].Columns[CountryRegionCode]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="CountryRegionCode"
+                      lineageId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[CountryRegionCode]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                          name="JoinToReferenceColumn">CodigoRegion</property>
+                        <property
+                          dataType="System.Null"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Ole DB Look Up\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda]"
+                  errorOrTruncationOperation="Búsqueda"
+                  exclusionGroup="1"
+                  name="Salida de entradas coincidentes de búsqueda"
+                  synchronousInputId="Package\Ole DB Look Up\Búsqueda.Inputs[Entrada de búsqueda]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Ole DB Look Up\Búsqueda.Outputs[Salida de entradas no coincidentes de búsqueda]"
+                  description="Salida de búsqueda que trata las filas sin entradas coincidentes en el conjunto de datos de referencia. Utilice esta salida cuando la propiedad NoMatchBehavior esté establecida en 'Enviar las filas sin entradas coincidentes a la salida de entradas no coincidentes'."
+                  exclusionGroup="1"
+                  name="Salida de entradas no coincidentes de búsqueda"
+                  synchronousInputId="Package\Ole DB Look Up\Búsqueda.Inputs[Entrada de búsqueda]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Ole DB Look Up\Búsqueda.Outputs[Salida de error de búsqueda]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de búsqueda"
+                  synchronousInputId="Package\Ole DB Look Up\Búsqueda.Inputs[Entrada de búsqueda]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Ole DB Look Up\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Ole DB Look Up\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Ole DB Look Up\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Ole DB Look Up\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Ole DB Look Up\Origen de OLE DB"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="Origen de OLE DB"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT CountryRegionCode, EnglishCountryRegionName, 
+		StateProvinceName, City, IpAddressLocator
+ FROM DimGeography</property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Ole DB Look Up\Origen de OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-HTNVJ684\SQLEXPRESS.AdventureWorksDW2016]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-HTNVJ684\SQLEXPRESS.AdventureWorksDW2016]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[CountryRegionCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[CountryRegionCode]"
+                      length="3"
+                      lineageId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[CountryRegionCode]"
+                      name="CountryRegionCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[EnglishCountryRegionName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[EnglishCountryRegionName]"
+                      length="50"
+                      lineageId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[EnglishCountryRegionName]"
+                      name="EnglishCountryRegionName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[StateProvinceName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[StateProvinceName]"
+                      length="50"
+                      lineageId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[StateProvinceName]"
+                      name="StateProvinceName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[City]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[City]"
+                      length="30"
+                      lineageId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[City]"
+                      name="City"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[IpAddressLocator]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[IpAddressLocator]"
+                      length="15"
+                      lineageId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[IpAddressLocator]"
+                      name="IpAddressLocator"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[CountryRegionCode]"
+                      dataType="wstr"
+                      length="3"
+                      name="CountryRegionCode" />
+                    <externalMetadataColumn
+                      refId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[EnglishCountryRegionName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EnglishCountryRegionName" />
+                    <externalMetadataColumn
+                      refId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[StateProvinceName]"
+                      dataType="wstr"
+                      length="50"
+                      name="StateProvinceName" />
+                    <externalMetadataColumn
+                      refId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="30"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[IpAddressLocator]"
+                      dataType="wstr"
+                      length="15"
+                      name="IpAddressLocator" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[CountryRegionCode]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[CountryRegionCode]"
+                      name="CountryRegionCode" />
+                    <outputColumn
+                      refId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[EnglishCountryRegionName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[EnglishCountryRegionName]"
+                      name="EnglishCountryRegionName" />
+                    <outputColumn
+                      refId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[StateProvinceName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[StateProvinceName]"
+                      name="StateProvinceName" />
+                    <outputColumn
+                      refId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[City]"
+                      dataType="wstr"
+                      length="30"
+                      lineageId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[City]"
+                      name="City" />
+                    <outputColumn
+                      refId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[IpAddressLocator]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[IpAddressLocator]"
+                      name="IpAddressLocator" />
+                    <outputColumn
+                      refId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Ole DB Look Up\Registro Coincidente Ole DB"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Destino de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Destino de archivo plano"
+              localeId="3082"
+              name="Registro Coincidente Ole DB"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si los datos sobrescriben el archivo de destino o se anexan al mismo."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica el texto para escribir en el archivo de destino antes de escribir ningún dato."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Cuando el calificador de texto está habilitado, especifica si este contendrá secuencias de escape o no en los datos escritos en el archivo de destino."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Ole DB Look Up\Registro Coincidente Ole DB.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Reporte Coincidente Ole DB]"
+                  connectionManagerRefId="Package.ConnectionManagers[Reporte Coincidente Ole DB]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Ole DB Look Up\Registro Coincidente Ole DB.Inputs[Entrada de destino de archivo plano]"
+                  hasSideEffects="true"
+                  name="Entrada de destino de archivo plano">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Ole DB Look Up\Registro Coincidente Ole DB.Inputs[Entrada de destino de archivo plano].Columns[CountryRegionCode]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="CountryRegionCode"
+                      externalMetadataColumnId="Package\Ole DB Look Up\Registro Coincidente Ole DB.Inputs[Entrada de destino de archivo plano].ExternalColumns[CountryRegionCode]"
+                      lineageId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[CountryRegionCode]" />
+                    <inputColumn
+                      refId="Package\Ole DB Look Up\Registro Coincidente Ole DB.Inputs[Entrada de destino de archivo plano].Columns[EnglishCountryRegionName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishCountryRegionName"
+                      externalMetadataColumnId="Package\Ole DB Look Up\Registro Coincidente Ole DB.Inputs[Entrada de destino de archivo plano].ExternalColumns[EnglishCountryRegionName]"
+                      lineageId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[EnglishCountryRegionName]" />
+                    <inputColumn
+                      refId="Package\Ole DB Look Up\Registro Coincidente Ole DB.Inputs[Entrada de destino de archivo plano].Columns[StateProvinceName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="StateProvinceName"
+                      externalMetadataColumnId="Package\Ole DB Look Up\Registro Coincidente Ole DB.Inputs[Entrada de destino de archivo plano].ExternalColumns[StateProvinceName]"
+                      lineageId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[StateProvinceName]" />
+                    <inputColumn
+                      refId="Package\Ole DB Look Up\Registro Coincidente Ole DB.Inputs[Entrada de destino de archivo plano].Columns[City]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="City"
+                      externalMetadataColumnId="Package\Ole DB Look Up\Registro Coincidente Ole DB.Inputs[Entrada de destino de archivo plano].ExternalColumns[City]"
+                      lineageId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[City]" />
+                    <inputColumn
+                      refId="Package\Ole DB Look Up\Registro Coincidente Ole DB.Inputs[Entrada de destino de archivo plano].Columns[IpAddressLocator]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="IpAddressLocator"
+                      externalMetadataColumnId="Package\Ole DB Look Up\Registro Coincidente Ole DB.Inputs[Entrada de destino de archivo plano].ExternalColumns[IpAddressLocator]"
+                      lineageId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[IpAddressLocator]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Ole DB Look Up\Registro Coincidente Ole DB.Inputs[Entrada de destino de archivo plano].ExternalColumns[CountryRegionCode]"
+                      dataType="wstr"
+                      length="3"
+                      name="CountryRegionCode" />
+                    <externalMetadataColumn
+                      refId="Package\Ole DB Look Up\Registro Coincidente Ole DB.Inputs[Entrada de destino de archivo plano].ExternalColumns[EnglishCountryRegionName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EnglishCountryRegionName" />
+                    <externalMetadataColumn
+                      refId="Package\Ole DB Look Up\Registro Coincidente Ole DB.Inputs[Entrada de destino de archivo plano].ExternalColumns[StateProvinceName]"
+                      dataType="wstr"
+                      length="50"
+                      name="StateProvinceName" />
+                    <externalMetadataColumn
+                      refId="Package\Ole DB Look Up\Registro Coincidente Ole DB.Inputs[Entrada de destino de archivo plano].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="30"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\Ole DB Look Up\Registro Coincidente Ole DB.Inputs[Entrada de destino de archivo plano].ExternalColumns[IpAddressLocator]"
+                      dataType="wstr"
+                      length="15"
+                      name="IpAddressLocator" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Ole DB Look Up\Registro no Coincidente Ole DB"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Destino de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Destino de archivo plano"
+              localeId="3082"
+              name="Registro no Coincidente Ole DB"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si los datos sobrescriben el archivo de destino o se anexan al mismo."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica el texto para escribir en el archivo de destino antes de escribir ningún dato."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Cuando el calificador de texto está habilitado, especifica si este contendrá secuencias de escape o no en los datos escritos en el archivo de destino."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Ole DB Look Up\Registro no Coincidente Ole DB.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Reporte no Coincidente Ole DB]"
+                  connectionManagerRefId="Package.ConnectionManagers[Reporte no Coincidente Ole DB]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Ole DB Look Up\Registro no Coincidente Ole DB.Inputs[Entrada de destino de archivo plano]"
+                  hasSideEffects="true"
+                  name="Entrada de destino de archivo plano">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Ole DB Look Up\Registro no Coincidente Ole DB.Inputs[Entrada de destino de archivo plano].Columns[CountryRegionCode]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="CountryRegionCode"
+                      externalMetadataColumnId="Package\Ole DB Look Up\Registro no Coincidente Ole DB.Inputs[Entrada de destino de archivo plano].ExternalColumns[CountryRegionCode]"
+                      lineageId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[CountryRegionCode]" />
+                    <inputColumn
+                      refId="Package\Ole DB Look Up\Registro no Coincidente Ole DB.Inputs[Entrada de destino de archivo plano].Columns[EnglishCountryRegionName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishCountryRegionName"
+                      externalMetadataColumnId="Package\Ole DB Look Up\Registro no Coincidente Ole DB.Inputs[Entrada de destino de archivo plano].ExternalColumns[EnglishCountryRegionName]"
+                      lineageId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[EnglishCountryRegionName]" />
+                    <inputColumn
+                      refId="Package\Ole DB Look Up\Registro no Coincidente Ole DB.Inputs[Entrada de destino de archivo plano].Columns[StateProvinceName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="StateProvinceName"
+                      externalMetadataColumnId="Package\Ole DB Look Up\Registro no Coincidente Ole DB.Inputs[Entrada de destino de archivo plano].ExternalColumns[StateProvinceName]"
+                      lineageId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[StateProvinceName]" />
+                    <inputColumn
+                      refId="Package\Ole DB Look Up\Registro no Coincidente Ole DB.Inputs[Entrada de destino de archivo plano].Columns[City]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="City"
+                      externalMetadataColumnId="Package\Ole DB Look Up\Registro no Coincidente Ole DB.Inputs[Entrada de destino de archivo plano].ExternalColumns[City]"
+                      lineageId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[City]" />
+                    <inputColumn
+                      refId="Package\Ole DB Look Up\Registro no Coincidente Ole DB.Inputs[Entrada de destino de archivo plano].Columns[IpAddressLocator]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="IpAddressLocator"
+                      externalMetadataColumnId="Package\Ole DB Look Up\Registro no Coincidente Ole DB.Inputs[Entrada de destino de archivo plano].ExternalColumns[IpAddressLocator]"
+                      lineageId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[IpAddressLocator]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Ole DB Look Up\Registro no Coincidente Ole DB.Inputs[Entrada de destino de archivo plano].ExternalColumns[CountryRegionCode]"
+                      dataType="wstr"
+                      length="3"
+                      name="CountryRegionCode" />
+                    <externalMetadataColumn
+                      refId="Package\Ole DB Look Up\Registro no Coincidente Ole DB.Inputs[Entrada de destino de archivo plano].ExternalColumns[EnglishCountryRegionName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EnglishCountryRegionName" />
+                    <externalMetadataColumn
+                      refId="Package\Ole DB Look Up\Registro no Coincidente Ole DB.Inputs[Entrada de destino de archivo plano].ExternalColumns[StateProvinceName]"
+                      dataType="wstr"
+                      length="50"
+                      name="StateProvinceName" />
+                    <externalMetadataColumn
+                      refId="Package\Ole DB Look Up\Registro no Coincidente Ole DB.Inputs[Entrada de destino de archivo plano].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="30"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\Ole DB Look Up\Registro no Coincidente Ole DB.Inputs[Entrada de destino de archivo plano].ExternalColumns[IpAddressLocator]"
+                      dataType="wstr"
+                      length="15"
+                      name="IpAddressLocator" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Ole DB Look Up.Paths[Salida de entradas coincidentes de búsqueda]"
+              endId="Package\Ole DB Look Up\Registro Coincidente Ole DB.Inputs[Entrada de destino de archivo plano]"
+              name="Salida de entradas coincidentes de búsqueda"
+              startId="Package\Ole DB Look Up\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda]" />
+            <path
+              refId="Package\Ole DB Look Up.Paths[Salida de entradas no coincidentes de búsqueda]"
+              endId="Package\Ole DB Look Up\Registro no Coincidente Ole DB.Inputs[Entrada de destino de archivo plano]"
+              name="Salida de entradas no coincidentes de búsqueda"
+              startId="Package\Ole DB Look Up\Búsqueda.Outputs[Salida de entradas no coincidentes de búsqueda]" />
+            <path
+              refId="Package\Ole DB Look Up.Paths[Salida de origen de OLE DB]"
+              endId="Package\Ole DB Look Up\Búsqueda.Inputs[Entrada de búsqueda]"
+              name="Salida de origen de OLE DB"
+              startId="Package\Ole DB Look Up\Origen de OLE DB.Outputs[Salida de origen de OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tarea Ejecutar SQL"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{21C411E3-74CB-4110-AEC9-8BBDFEAD5572}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarea Ejecutar SQL"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{6F103A3C-5D3B-4DEC-B320-5751736BD1EC}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE BUSQUEDA" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Transformación Cache"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{D87A82C2-144E-4C30-9D95-E2E4F1B4F856}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Transformación Cache"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Transformación Cache\Carga Archivo Country"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Origen de Excel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Origen de Excel"
+              name="Carga Archivo Country"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">Hoja1$</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="La asignación de parámetros del comando SQL a variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Transformación Cache\Carga Archivo Country.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Administrador de conexiones con Excel]"
+                  connectionManagerRefId="Package.ConnectionManagers[Administrador de conexiones con Excel]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Transformación Cache\Carga Archivo Country.Outputs[Salida de origen de Excel]"
+                  name="Salida de origen de Excel">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transformación Cache\Carga Archivo Country.Outputs[Salida de origen de Excel].Columns[CountryRegionCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transformación Cache\Carga Archivo Country.Outputs[Salida de origen de Excel].ExternalColumns[CountryRegionCode]"
+                      length="255"
+                      lineageId="Package\Transformación Cache\Carga Archivo Country.Outputs[Salida de origen de Excel].Columns[CountryRegionCode]"
+                      name="CountryRegionCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transformación Cache\Carga Archivo Country.Outputs[Salida de origen de Excel].Columns[EnglishCountryRegionName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transformación Cache\Carga Archivo Country.Outputs[Salida de origen de Excel].ExternalColumns[EnglishCountryRegionName]"
+                      length="255"
+                      lineageId="Package\Transformación Cache\Carga Archivo Country.Outputs[Salida de origen de Excel].Columns[EnglishCountryRegionName]"
+                      name="EnglishCountryRegionName"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Transformación Cache\Carga Archivo Country.Outputs[Salida de origen de Excel].ExternalColumns[CountryRegionCode]"
+                      dataType="wstr"
+                      length="255"
+                      name="CountryRegionCode" />
+                    <externalMetadataColumn
+                      refId="Package\Transformación Cache\Carga Archivo Country.Outputs[Salida de origen de Excel].ExternalColumns[EnglishCountryRegionName]"
+                      dataType="wstr"
+                      length="255"
+                      name="EnglishCountryRegionName" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Transformación Cache\Carga Archivo Country.Outputs[Salida de error de origen de Excel]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de Excel">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transformación Cache\Carga Archivo Country.Outputs[Salida de error de origen de Excel].Columns[CountryRegionCode]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Transformación Cache\Carga Archivo Country.Outputs[Salida de error de origen de Excel].Columns[CountryRegionCode]"
+                      name="CountryRegionCode" />
+                    <outputColumn
+                      refId="Package\Transformación Cache\Carga Archivo Country.Outputs[Salida de error de origen de Excel].Columns[EnglishCountryRegionName]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Transformación Cache\Carga Archivo Country.Outputs[Salida de error de origen de Excel].Columns[EnglishCountryRegionName]"
+                      name="EnglishCountryRegionName" />
+                    <outputColumn
+                      refId="Package\Transformación Cache\Carga Archivo Country.Outputs[Salida de error de origen de Excel].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Transformación Cache\Carga Archivo Country.Outputs[Salida de error de origen de Excel].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Transformación Cache\Carga Archivo Country.Outputs[Salida de error de origen de Excel].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Transformación Cache\Carga Archivo Country.Outputs[Salida de error de origen de Excel].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Transformación Cache\Carga Busqueda"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="Carga Busqueda"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[Busqueda]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Transformación Cache\Carga Busqueda.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-HTNVJ684\SQLEXPRESS.STREAMING]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-HTNVJ684\SQLEXPRESS.STREAMING]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Transformación Cache\Carga Busqueda.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Transformación Cache\Carga Busqueda.Inputs[Entrada de destino de OLE DB].Columns[Copy of CountryRegionCode]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of CountryRegionCode"
+                      externalMetadataColumnId="Package\Transformación Cache\Carga Busqueda.Inputs[Entrada de destino de OLE DB].ExternalColumns[CodigoRegion]"
+                      lineageId="Package\Transformación Cache\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of CountryRegionCode]" />
+                    <inputColumn
+                      refId="Package\Transformación Cache\Carga Busqueda.Inputs[Entrada de destino de OLE DB].Columns[EnglishCountryRegionName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="EnglishCountryRegionName"
+                      externalMetadataColumnId="Package\Transformación Cache\Carga Busqueda.Inputs[Entrada de destino de OLE DB].ExternalColumns[NombreRegion]"
+                      lineageId="Package\Transformación Cache\Carga Archivo Country.Outputs[Salida de origen de Excel].Columns[EnglishCountryRegionName]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Transformación Cache\Carga Busqueda.Inputs[Entrada de destino de OLE DB].ExternalColumns[CodigoRegion]"
+                      dataType="wstr"
+                      length="50"
+                      name="CodigoRegion" />
+                    <externalMetadataColumn
+                      refId="Package\Transformación Cache\Carga Busqueda.Inputs[Entrada de destino de OLE DB].ExternalColumns[NombreRegion]"
+                      dataType="wstr"
+                      length="50"
+                      name="NombreRegion" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Transformación Cache\Carga Busqueda.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\Transformación Cache\Carga Busqueda.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transformación Cache\Carga Busqueda.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Transformación Cache\Carga Busqueda.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Transformación Cache\Carga Busqueda.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Transformación Cache\Carga Busqueda.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Transformación Cache\Conversión de datos"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Conversión de datos;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Conversión de datos"
+              name="Conversión de datos"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Transformación Cache\Conversión de datos.Inputs[Entrada de conversión de datos]"
+                  name="Entrada de conversión de datos">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Transformación Cache\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[CountryRegionCode]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CountryRegionCode"
+                      lineageId="Package\Transformación Cache\Carga Archivo Country.Outputs[Salida de origen de Excel].Columns[CountryRegionCode]" />
+                    <inputColumn
+                      refId="Package\Transformación Cache\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[EnglishCountryRegionName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="EnglishCountryRegionName"
+                      lineageId="Package\Transformación Cache\Carga Archivo Country.Outputs[Salida de origen de Excel].Columns[EnglishCountryRegionName]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Transformación Cache\Conversión de datos.Outputs[Salida de conversión de datos]"
+                  exclusionGroup="1"
+                  name="Salida de conversión de datos"
+                  synchronousInputId="Package\Transformación Cache\Conversión de datos.Inputs[Entrada de conversión de datos]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transformación Cache\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of CountryRegionCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Transformación Cache\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of CountryRegionCode]"
+                      name="Copy of CountryRegionCode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\Transformación Cache\Carga Archivo Country.Outputs[Salida de origen de Excel].Columns[CountryRegionCode]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Transformación Cache\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of EnglishCountryRegionName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Transformación Cache\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of EnglishCountryRegionName]"
+                      name="Copy of EnglishCountryRegionName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\Transformación Cache\Carga Archivo Country.Outputs[Salida de origen de Excel].Columns[EnglishCountryRegionName]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Transformación Cache\Conversión de datos.Outputs[Salida de error de conversión de datos]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de conversión de datos"
+                  synchronousInputId="Package\Transformación Cache\Conversión de datos.Inputs[Entrada de conversión de datos]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transformación Cache\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Transformación Cache\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Transformación Cache\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Transformación Cache\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Transformación Cache\Multidifusión"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multidifusión;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Distribuye cada fila de entrada a cada una de las filas de una o varias salidas. Por ejemplo, se crea una bifurcación de un flujo de datos para realizar una copia de los datos de modo que se puedan enmascarar algunos valores antes de compartirlos con los asociados externos."
+              name="Multidifusión">
+              <inputs>
+                <input
+                  refId="Package\Transformación Cache\Multidifusión.Inputs[Entrada de Multidifusión 1]"
+                  name="Entrada de Multidifusión 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Transformación Cache\Multidifusión.Outputs[Salida de Multidifusión 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Salida de Multidifusión 1"
+                  synchronousInputId="Package\Transformación Cache\Multidifusión.Inputs[Entrada de Multidifusión 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Transformación Cache\Multidifusión.Outputs[Salida de multidifusión 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Salida de multidifusión 1"
+                  synchronousInputId="Package\Transformación Cache\Multidifusión.Inputs[Entrada de Multidifusión 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Transformación Cache\Multidifusión.Outputs[Salida de multidifusión 2]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Salida de multidifusión 2"
+                  synchronousInputId="Package\Transformación Cache\Multidifusión.Inputs[Entrada de Multidifusión 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Transformación Cache\Transformación de caché"
+              componentClassID="Microsoft.Cache"
+              contactInfo="Transformación de caché;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Escribe datos en una memoria caché (archivo .caw) con el Administrador de conexiones de caché. Para reducir la carga de la base de datos, se debe reutilizar la memoria caché entre varias transformaciones Búsqueda. Para reducir el uso de la memoria, se debe compartir la memoria caché. Nota: los datos de la memoria caché se almacenan sin cifrar, por lo que no se recomienda su uso para información confidencial."
+              name="Transformación de caché">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Determina si las claves duplicadas de los datos de referencia se deben tratar como errores cuando se usa el modo de caché."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Transformación Cache\Transformación de caché.Connections[CacheConnection]"
+                  connectionManagerID="Package.ConnectionManagers[ConexionArchivoCache]"
+                  connectionManagerRefId="Package.ConnectionManagers[ConexionArchivoCache]"
+                  description="Conexión utilizada para tener acceso a la caché."
+                  name="CacheConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Transformación Cache\Transformación de caché.Inputs[Entrada de caché]"
+                  hasSideEffects="true"
+                  name="Entrada de caché">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Transformación Cache\Transformación de caché.Inputs[Entrada de caché].Columns[CountryRegionCode]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CountryRegionCode"
+                      lineageId="Package\Transformación Cache\Carga Archivo Country.Outputs[Salida de origen de Excel].Columns[CountryRegionCode]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Columna de caché asociada a la columna de entrada."
+                          name="CacheColumnName">CountryRegionCode</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transformación Cache\Transformación de caché.Inputs[Entrada de caché].Columns[EnglishCountryRegionName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="EnglishCountryRegionName"
+                      lineageId="Package\Transformación Cache\Carga Archivo Country.Outputs[Salida de origen de Excel].Columns[EnglishCountryRegionName]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Columna de caché asociada a la columna de entrada."
+                          name="CacheColumnName">EnglishCountryRegionName</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Transformación Cache\Transformación de caché.Outputs[Salida de caché]"
+                  name="Salida de caché"
+                  synchronousInputId="Package\Transformación Cache\Transformación de caché.Inputs[Entrada de caché]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Transformación Cache.Paths[Salida de conversión de datos]"
+              endId="Package\Transformación Cache\Carga Busqueda.Inputs[Entrada de destino de OLE DB]"
+              name="Salida de conversión de datos"
+              startId="Package\Transformación Cache\Conversión de datos.Outputs[Salida de conversión de datos]" />
+            <path
+              refId="Package\Transformación Cache.Paths[Salida de Multidifusión 1]"
+              endId="Package\Transformación Cache\Transformación de caché.Inputs[Entrada de caché]"
+              name="Salida de Multidifusión 1"
+              startId="Package\Transformación Cache\Multidifusión.Outputs[Salida de Multidifusión 1]" />
+            <path
+              refId="Package\Transformación Cache.Paths[Salida de multidifusión 1]"
+              endId="Package\Transformación Cache\Conversión de datos.Inputs[Entrada de conversión de datos]"
+              name="Salida de multidifusión 1"
+              startId="Package\Transformación Cache\Multidifusión.Outputs[Salida de multidifusión 1]" />
+            <path
+              refId="Package\Transformación Cache.Paths[Salida de origen de Excel]"
+              endId="Package\Transformación Cache\Multidifusión.Inputs[Entrada de Multidifusión 1]"
+              name="Salida de origen de Excel"
+              startId="Package\Transformación Cache\Carga Archivo Country.Outputs[Salida de origen de Excel]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{E2C61E9F-50F4-42E5-8DE9-F213B98AA3FB}"
+      DTS:From="Package\Transformación Cache"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\Cache Look UP" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{36F51C13-C339-482A-ACB5-7757FAF32A2B}"
+      DTS:From="Package\Tarea Ejecutar SQL"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 1"
+      DTS:To="Package\Transformación Cache" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{FCABDBA3-3A96-4078-B781-B98AEAF1C91C}"
+      DTS:From="Package\Transformación Cache"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 2"
+      DTS:To="Package\Ole DB Look Up" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Transformación Cache"
+          TopLeft="233,106" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Cache Look UP"
+          TopLeft="74,178" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="328,148">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-176,30"
+              Start="0,0"
+              End="-176,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11"
+                    Point2="0,15"
+                    Point3="-4,15" />
+                  <mssgle:LineSegment
+                    End="-172,15" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-172,15"
+                    Point2="-176,15"
+                    Point3="-176,19" />
+                  <mssgle:LineSegment
+                    End="-176,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Tarea Ejecutar SQL"
+          TopLeft="244,31" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 1]"
+          TopLeft="330,73">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33"
+              Start="0,0"
+              End="0,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Ole DB Look Up"
+          TopLeft="454,184" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 2]"
+          TopLeft="358.333333333333,148">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="174.666666666667,36"
+              Start="0,0"
+              End="174.666666666667,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.580375782881" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.580375782881"
+                    Point2="0,14.580375782881"
+                    Point3="4,14.580375782881" />
+                  <mssgle:LineSegment
+                    End="170.666666666667,14.580375782881" />
+                  <mssgle:CubicBezierSegment
+                    Point1="170.666666666667,14.580375782881"
+                    Point2="174.666666666667,14.580375782881"
+                    Point3="174.666666666667,18.580375782881" />
+                  <mssgle:LineSegment
+                    End="174.666666666667,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Transformación Cache">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Transformación Cache\Carga Archivo Country"
+          TopLeft="232,34" />
+        <NodeLayout
+          Size="140,42"
+          Id="Package\Transformación Cache\Multidifusión"
+          TopLeft="259,106" />
+        <EdgeLayout
+          Id="Package\Transformación Cache.Paths[Salida de origen de Excel]"
+          TopLeft="328,76">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="203,42"
+          Id="Package\Transformación Cache\Transformación de caché"
+          TopLeft="67,191" />
+        <EdgeLayout
+          Id="Package\Transformación Cache.Paths[Salida de Multidifusión 1]"
+          TopLeft="307,148">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-138.5,43"
+              Start="0,0"
+              End="-138.5,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.4915254237288" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.4915254237288"
+                    Point2="0,17.4915254237288"
+                    Point3="-4,17.4915254237288" />
+                  <mssgle:LineSegment
+                    End="-134.5,17.4915254237288" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-134.5,17.4915254237288"
+                    Point2="-138.5,17.4915254237288"
+                    Point3="-138.5,21.4915254237288" />
+                  <mssgle:LineSegment
+                    End="-138.5,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Transformación Cache\Carga Busqueda"
+          TopLeft="402,279" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Transformación Cache\Conversión de datos"
+          TopLeft="397,191" />
+        <EdgeLayout
+          Id="Package\Transformación Cache.Paths[Salida de multidifusión 1]"
+          TopLeft="351,148">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="136,43"
+              Start="0,0"
+              End="136,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.4915254237288" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.4915254237288"
+                    Point2="0,17.4915254237288"
+                    Point3="4,17.4915254237288" />
+                  <mssgle:LineSegment
+                    End="132,17.4915254237288" />
+                  <mssgle:CubicBezierSegment
+                    Point1="132,17.4915254237288"
+                    Point2="136,17.4915254237288"
+                    Point3="136,21.4915254237288" />
+                  <mssgle:LineSegment
+                    End="136,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transformación Cache.Paths[Salida de conversión de datos]"
+          TopLeft="484.75,233">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46"
+              Start="0,0"
+              End="0,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transformación Cache\Carga Archivo Country">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transformación Cache\Carga Busqueda">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Cache Look UP">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Cache Look UP\DimGeography"
+          TopLeft="243,43" />
+        <NodeLayout
+          Size="129,42"
+          Id="Package\Cache Look UP\Búsqueda"
+          TopLeft="256,124" />
+        <EdgeLayout
+          Id="Package\Cache Look UP.Paths[Salida de origen de OLE DB]"
+          TopLeft="320,85">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39"
+              Start="0,0"
+              End="0,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="229,42"
+          Id="Package\Cache Look UP\Reporte Coincidente de Cache"
+          TopLeft="15,213" />
+        <NodeLayout
+          Size="244,42"
+          Id="Package\Cache Look UP\Reporte no Coincidente de Cache"
+          TopLeft="421,215" />
+        <EdgeLayout
+          Id="Package\Cache Look UP.Paths[Salida de entradas coincidentes de búsqueda]"
+          TopLeft="300.333333333333,166">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-170.833333333333,47"
+              Start="0,0"
+              End="-170.833333333333,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.145482388974" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.145482388974"
+                    Point2="0,19.145482388974"
+                    Point3="-4,19.145482388974" />
+                  <mssgle:LineSegment
+                    End="-166.833333333333,19.145482388974" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-166.833333333333,19.145482388974"
+                    Point2="-170.833333333333,19.145482388974"
+                    Point3="-170.833333333333,23.145482388974" />
+                  <mssgle:LineSegment
+                    End="-170.833333333333,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-185.235690104167,24.145482388974,199.638046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Cache Look UP.Paths[Salida de entradas no coincidentes de búsqueda]"
+          TopLeft="340.666666666667,166">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="202.333333333333,49"
+              Start="0,0"
+              End="202.333333333333,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.9601837672282" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.9601837672282"
+                    Point2="0,19.9601837672282"
+                    Point3="4,19.9601837672282" />
+                  <mssgle:LineSegment
+                    End="198.333333333333,19.9601837672282" />
+                  <mssgle:CubicBezierSegment
+                    Point1="198.333333333333,19.9601837672282"
+                    Point2="202.333333333333,19.9601837672282"
+                    Point3="202.333333333333,23.9601837672282" />
+                  <mssgle:LineSegment
+                    End="202.333333333333,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-5.72235677083331,24.9601837672282,213.778046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Cache Look UP\DimGeography">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Cache Look UP\Búsqueda">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[AdventureWorksDWBuildVersion]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Ole DB Look Up">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Ole DB Look Up\Origen de OLE DB"
+          TopLeft="241,37" />
+        <NodeLayout
+          Size="129,42"
+          Id="Package\Ole DB Look Up\Búsqueda"
+          TopLeft="262,120" />
+        <EdgeLayout
+          Id="Package\Ole DB Look Up.Paths[Salida de origen de OLE DB]"
+          TopLeft="326.25,79">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41"
+              Start="0,0"
+              End="0,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="219,42"
+          Id="Package\Ole DB Look Up\Registro Coincidente Ole DB"
+          TopLeft="34,204" />
+        <NodeLayout
+          Size="235,42"
+          Id="Package\Ole DB Look Up\Registro no Coincidente Ole DB"
+          TopLeft="419,202" />
+        <EdgeLayout
+          Id="Package\Ole DB Look Up.Paths[Salida de entradas coincidentes de búsqueda]"
+          TopLeft="306.333333333333,162">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-162.833333333333,42"
+              Start="0,0"
+              End="-162.833333333333,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.1087289433384" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.1087289433384"
+                    Point2="0,17.1087289433384"
+                    Point3="-4,17.1087289433384" />
+                  <mssgle:LineSegment
+                    End="-158.833333333333,17.1087289433384" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-158.833333333333,17.1087289433384"
+                    Point2="-162.833333333333,17.1087289433384"
+                    Point3="-162.833333333333,21.1087289433384" />
+                  <mssgle:LineSegment
+                    End="-162.833333333333,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-181.235690104167,22.1087289433384,199.638046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Ole DB Look Up.Paths[Salida de entradas no coincidentes de búsqueda]"
+          TopLeft="346.666666666667,162">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="189.833333333333,40"
+              Start="0,0"
+              End="189.833333333333,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.2940275650842" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.2940275650842"
+                    Point2="0,16.2940275650842"
+                    Point3="4,16.2940275650842" />
+                  <mssgle:LineSegment
+                    End="185.833333333333,16.2940275650842" />
+                  <mssgle:CubicBezierSegment
+                    Point1="185.833333333333,16.2940275650842"
+                    Point2="189.833333333333,16.2940275650842"
+                    Point3="189.833333333333,20.2940275650842" />
+                  <mssgle:LineSegment
+                    End="189.833333333333,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-11.9723567708333,21.2940275650842,213.778046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Ole DB Look Up\Origen de OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Ole DB Look Up\Búsqueda">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Busqueda]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
